@@ -4,7 +4,7 @@ import "./style.css";
 function Nav() {
   return (
     <nav className="navbar sticky-top navbar-dark">
-      <p className="navbar-brand"> Book Search </p>
+      <p className="navbar-brand"> Simple </p>
       <div>
         <a className="navbar-brand" href="/">
           Search Books
