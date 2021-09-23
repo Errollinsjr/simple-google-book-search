@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Search from "./pages/Search";
-import Saved from "./pages/Saved";
+import SearchPage from "./pages/SearchPage";
+// import Saved from "./pages/Saved";
 import Nav from "./components/Nav";
 import Jumbotron from "./components/Jumbotron";
-import NoMatch from "./pages/NoMatch";
+// import NoMatch from "./pages/NoMatch";
 
 function App() {
   return (
@@ -14,14 +14,14 @@ function App() {
         <Jumbotron />
         <Switch>
           <Route exact path="/">
-            <Search />
+            <SearchPage />
           </Route>
-          <Route exact path="/saved">
+          {/* <Route exact path="/saved">
             <Saved />
-          </Route>
-          <Route>
+          </Route> */}
+          {/* <Route>
             <NoMatch />
-          </Route>
+          </Route> */}
         </Switch>
       </div>
     </Router>
