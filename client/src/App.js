@@ -4,7 +4,8 @@ import SearchPage from "./pages/SearchPage";
 // import Saved from "./pages/Saved";
 import Nav from "./components/Nav";
 import Jumbotron from "./components/Jumbotron";
-// import NoMatch from "./pages/NoMatch";
+import FourOhFourPage from "./pages/FourOhFour";
+
 
 function App() {
   return (
@@ -16,12 +17,14 @@ function App() {
           <Route exact path="/">
             <SearchPage />
           </Route>
+
           {/* <Route exact path="/saved">
             <Saved />
           </Route> */}
-          {/* <Route>
-            <NoMatch />
-          </Route> */}
+
+          <Route>
+            <FourOhFourPage />
+          </Route>
         </Switch>
       </div>
     </Router>
