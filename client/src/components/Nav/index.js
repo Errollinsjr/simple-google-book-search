@@ -3,7 +3,7 @@ import "./style.css";
 
 function Nav() {
   return (
-    <nav className="navbar sticky-top navbar-dark bg-dark">
+    <nav className="navbar sticky-top navbar-dark">
       <p className="navbar-brand"> Book Search </p>
       <div>
         <a className="navbar-brand" href="/">

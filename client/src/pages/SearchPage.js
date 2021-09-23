@@ -64,8 +64,7 @@ function SearchPage() {
                     <Button
                       onClick={handleFormSubmit}
                       size='lg'
-                      type="success"
-                      className="input-lg"
+                      className="search-btn"
                     >
                         Search
                     </Button>
