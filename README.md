@@ -16,7 +16,7 @@ SO THAT I can easily access or read them
 
 ## Screenshot
 
-
+![Screen Shot 2021-09-23 at 6 04 20 PM](https://user-images.githubusercontent.com/43302610/134590306-50b8a836-436d-4d5c-8195-5671b811bfdc.png)
 
 ## Technologies used
 
