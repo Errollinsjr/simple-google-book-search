@@ -6,16 +6,31 @@ import { BookList, BookListItem } from "../components/BookList";
 import { Container, Row, Col } from "../components/Grid";
 
 function SearchPage() {
-
+  // need state for books when using throughout functions and render  
   const [books, setBooks] = useState([]);
   const [bookSearch, setBookSearch] = useState("");
 
   const handleInputChange = event => {
-    // Destructure the name and value properties off of event.target
-    // Update the appropriate state
     const { value } = event.target;
     setBookSearch(value);
   };
+
+  const handleSaveBook = event => {
+    //When the button is clicked, prevent its default behavior
+    event.preventDefault();
+    
+    
+    API.saveBook({
+      id: books[event.target.id].id,
+      title: books[event.target.id].volumeInfo.title,
+      authors: books[event.target.id].volumeInfo.authors,
+      description: books[event.target.id].volumeInfo.description,
+      image: books[event.target.id].volumeInfo.imageLinks.thumbnail,
+      link: books[event.target.id].volumeInfo.link
+    })
+      .then(() => alert('Book saved!'))
+      .catch(err => console.log(err));
+  }
 
   const handleFormSubmit = event => {
     // When the form is submitted, prevent its default behavior, get books update the books state
@@ -28,23 +43,6 @@ function SearchPage() {
         }) 
       .catch(err => console.log(err));
   };
-
-  const handleSaveBook = event => {
-    //When the button is clicked, prevent its default behavior
-    event.preventDefault();
-    
-    //Save book details using the index to look up book details from state; alert user after save is succesful
-    API.saveBook({
-      id: books[event.target.id].id,
-      title: books[event.target.id].volumeInfo.title,
-      authors: books[event.target.id].volumeInfo.authors,
-      description: books[event.target.id].volumeInfo.description,
-      image: books[event.target.id].volumeInfo.imageLinks.thumbnail,
-      link: books[event.target.id].volumeInfo.link
-    })
-      .then(() => alert('Book saved!'))
-      .catch(err => console.log(err));
-  }
 
   return (
     <div>
@@ -59,7 +57,7 @@ function SearchPage() {
                       name="BookSearch"
                       value={bookSearch}
                       onChange={handleInputChange}
-                      placeholder="Search For a Book"
+                      placeholder="Search Here"
                     />
                   </Col>
                   <Col size="xs-3 sm-2">
@@ -80,7 +78,7 @@ function SearchPage() {
         <Row>
           <Col size="xs-10">
             {!books.length ? (
-              <h1 className="text-center">No Books to Display</h1>
+              <h1 className="text-center">No Books Searched</h1>
             ) : (
               <BookList type={'Search Results:'}>
                 {books.map((book, index) => {

@@ -4,13 +4,13 @@ import "./style.css";
 function Nav() {
   return (
     <nav className="navbar sticky-top navbar-dark bg-dark">
-      <p className="navbar-brand"> Google Books </p>
+      <p className="navbar-brand"> Book Search </p>
       <div>
         <a className="navbar-brand" href="/">
-          Search
+          Search Books
         </a>
         <a className="navbar-brand" href="/saved">
-          Saved
+          Saved Page
         </a>
       </div>
     </nav>
